@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Mastery Roadmap: Tech & Fluency B2/C1</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonte Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              850: '#151e2e',
+              900: '#0f172a',
+              950: '#090d16',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Customizações sutis de scrollbar e animações */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    .glass-header {
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .vocab-pill:hover .vocab-tooltip {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 pb-20">
+
+  <!-- ===================================================================== -->
+  <!-- HEADER FIXO: PAINEL DE PROGRESSO GERAL E CONTROLES                    -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 glass-header border-b border-slate-800/80 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        
+        <!-- Título & Badge -->
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+              A2/B1 → B2/C1
+            </span>
+            <span class="text-xs text-slate-400 font-medium">30 min/dia • Natural Method</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
+            English Mastery Roadmap: <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Tech & Fluency</span>
+          </h1>
+        </div>
+
+        <!-- Métricas e Barra de Progresso -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-slate-900/90 border border-slate-800 rounded-xl p-3">
+          <div class="min-w-[200px] sm:min-w-[240px]">
+            <div class="flex justify-between items-center text-xs mb-1.5">
+              <span class="text-slate-400 font-medium" id="progress-text">0 de 28 dias concluídos</span>
+              <span class="text-emerald-400 font-bold text-sm" id="progress-percent">0%</span>
+            </div>
+            <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+              <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-emerald-400 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="h-8 w-[1px] bg-slate-800 hidden sm:block"></div>
+
+          <!-- Contador de Vocabulário e Ações -->
+          <div class="flex items-center justify-between sm:justify-end gap-3">
+            <div class="text-left sm:text-right">
+              <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Vocabulário Ativo</div>
+              <div class="text-sm font-bold text-blue-400" id="vocab-counter">0 / 304 termos</div>
+            </div>
+
+            <button onclick="openResetModal()" title="Resetar ou Exportar Progresso" class="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors border border-transparent hover:border-slate-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- CONTEÚDO PRINCIPAL                                                    -->
+  <!-- ===================================================================== -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+
+    <!-- Navegação de Fases / Meses (Preparado para Partes 2 e 3) -->
+    <div class="flex flex-wrap items-center gap-2 mb-6 border-b border-slate-800 pb-4">
+      <button onclick="switchMonth(1)" id="tab-month-1" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-md shadow-blue-900/30 transition-all flex items-center gap-2">
+        <span>Mês 1: Fundamentos & Ouvido Tech</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-blue-500/40 text-blue-100">Ativo</span>
+      </button>
+
+      <button onclick="switchMonth(2)" id="tab-month-2" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 transition-all flex items-center gap-2">
+        <span>Mês 2: Argumentação & Storytelling</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-slate-800 text-slate-400">Parte 2</span>
+      </button>
+
+      <button onclick="switchMonth(3)" id="tab-month-3" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 transition-all flex items-center gap-2">
+        <span>Mês 3: Fluência Executiva & Debates</span>
+        <span class="px-2 py-0.5 text-xs rounded-full bg-slate-800 text-slate-400">Parte 3</span>
+      </button>
+    </div>
+
+    <!-- Banner de Metodologia Rápida (Lembrete do Barril & Micro-hábitos) -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-blue-950/40 border border-slate-800 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex items-start gap-3.5">
+        <div class="p-2.5 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 shrink-0 mt-0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-sm font-bold text-white">Regra de Ouro dos 30 Minutos + Imersão Passiva</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-0.5 leading-relaxed">
+            Clique em qualquer dia para abrir o roteiro detalhado minuto a minuto. Marque o checkbox ao concluir para atualizar seu progresso e destravar seu vocabulário acumulado.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2 shrink-0 self-end sm:self-center">
+        <button onclick="expandAllWeeks(true)" class="px-3 py-1.5 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors">
+          Expandir Tudo
+        </button>
+        <button onclick="expandAllWeeks(false)" class="px-3 py-1.5 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors">
+          Recolher Tudo
+        </button>
+      </div>
+    </div>
+
+    <!-- Container Dinâmico das Semanas (Mês 1) -->
+    <div id="month-1-container" class="space-y-6">
+      <!-- Renderizado via JavaScript -->
+    </div>
+
+    <!-- Placeholders para Meses 2 e 3 -->
+    <div id="month-placeholder-container" class="hidden bg-slate-900/60 border border-slate-800 border-dashed rounded-2xl p-10 text-center">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-white" id="placeholder-title">Mês 2: Em Breve na Parte 2</h3>
+      <p class="text-sm text-slate-400 max-w-md mx-auto mt-2" id="placeholder-desc">
+        Conclua as Semanas 1 a 4 ou peça a Parte 2 no chat para adicionarmos as Semanas 5 a 8 mantendo todo o seu progresso salvo automaticamente!
+      </p>
+      <button onclick="switchMonth(1)" class="mt-5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-colors">
+        Voltar para o Mês 1
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL DE DETALHES DO DIA (ROTEIRO MINUTO A MINUTO)                    -->
+  <!-- ===================================================================== -->
+  <div id="day-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm transition-opacity">
+    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in">
+      
+      <!-- Header do Modal -->
+      <div class="sticky top-0 bg-slate-900/95 backdrop-blur border-b border-slate-800 px-6 py-4 flex items-center justify-between z-10">
+        <div>
+          <span id="modal-week-badge" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Semana 1 • Segunda-feira</span>
+          <h3 id="modal-day-title" class="text-lg sm:text-xl font-bold text-white mt-0.5">Título da Atividade</h3>
+        </div>
+        <button onclick="closeDayModal()" class="p-2 text-slate-400 hover:text-white bg-slate-800/70 hover:bg-slate-800 rounded-xl transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Corpo do Modal -->
+      <div class="p-6 space-y-5">
+        
+        <!-- Técnica & Recurso -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5">
+            <div class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">Técnica Principal</div>
+            <div id="modal-technique" class="text-sm font-medium text-white">Sentence Mining + Escuta Ativa</div>
+          </div>
+          <div class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5">
+            <div class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-1">Recurso Exato do Barril</div>
+            <div id="modal-resource" class="text-sm font-medium text-white">TechLinked / Silicon Valley</div>
+          </div>
+        </div>
+
+        <!-- O que fazer hoje (Passo a Passo) -->
+        <div>
+          <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-2.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            O que vou estudar hoje (Passo a Passo)
+          </h4>
+          <div id="modal-description" class="text-sm text-slate-300 bg-slate-800/40 border border-slate-800 rounded-xl p-4 leading-relaxed space-y-2">
+            <!-- Preenchido via JS -->
+          </div>
+        </div>
+
+        <!-- Divisão Exata dos 30 Minutos -->
+        <div>
+          <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-2.5">
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+            Cronômetro: Divisão dos 30 Minutos
+          </h4>
+          <div id="modal-timeline" class="space-y-2">
+            <!-- Preenchido via JS -->
+          </div>
+        </div>
+
+        <!-- Micro-hábito & Imersão em Tempos Mortos -->
+        <div class="bg-gradient-to-r from-emerald-950/40 to-slate-900 border border-emerald-500/25 rounded-xl p-4">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1 flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            Micro-hábito & Tempo Morto do Dia
+          </div>
+          <p id="modal-microhabit" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <!-- Preenchido via JS -->
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Footer do Modal com Botão de Conclusão -->
+      <div class="sticky bottom-0 bg-slate-900/95 backdrop-blur border-t border-slate-800 px-6 py-4 flex items-center justify-between gap-3">
+        <button onclick="closeDayModal()" class="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
+          Fechar
+        </button>
+        <button id="modal-toggle-btn" onclick="toggleDayFromModal()" class="px-5 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 shadow-lg">
+          <!-- Texto dinâmico via JS -->
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL DE CONFIGURAÇÕES / EXPORTAR / RESETAR                           -->
+  <!-- ===================================================================== -->
+  <div id="reset-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+      <h3 class="text-lg font-bold text-white">Gerenciar Progresso</h3>
+      <p class="text-sm text-slate-400 mt-1">
+        Seu progresso fica salvo automaticamente neste navegador. Você pode exportar um backup ou zerar o checklist.
+      </p>
+
+      <div class="mt-5 space-y-3">
+        <button onclick="exportProgress()" class="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold rounded-xl border border-slate-700 transition-colors flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          Copiar Código de Backup (JSON)
+        </button>
+
+        <button onclick="confirmReset()" class="w-full py-2.5 px-4 bg-red-500/10 hover:bg-red-500/20 text-red-400 text-sm font-semibold rounded-xl border border-red-500/30 transition-colors">
+          Zerar Todo o Progresso
+        </button>
+      </div>
+
+      <div id="backup-feedback" class="hidden mt-3 text-xs text-emerald-400 text-center font-medium">
+        Backup copiado para a área de transferência!
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeResetModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium rounded-xl">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: DADOS ESTRUTURADOS (MÊS 1) E LÓGICA INTERATIVA            -->
+  <!-- ===================================================================== -->
+  <script>
+    // Chave única de armazenamento local (compatível com futuras expansões Parte 2 e 3)
+    const STORAGE_KEY = 'english_mastery_roadmap_v1';
+
+    // Estrutura de Dados do Mês 1 (Semanas 1 a 4)
+    const roadmapData = [
+      // ===================================================================
+      // SEMANA 1
+      // ===================================================================
+      {
+        weekNumber: 1,
+        month: 1,
+        theme: "Daily Stand-ups, Rotina de Trabalho & Setup Tech",
+        subtitle: "Como falar sobre o que você faz todos os dias, seu ambiente de trabalho e dar status rápido em reuniões.",
+        grammar: {
+          title: "Present Simple vs. Present Continuous no Contexto Tech",
+          explanation: "Use <strong>Present Simple</strong> para rotinas, arquitetura fixa e responsabilidades (<em>'I maintain the backend API'</em>, <em>'Our pipeline runs every night'</em>). Use <strong>Present Continuous</strong> para tarefas temporárias da sprint atual e status ao vivo na Daily (<em>'I'm currently refactoring the login flow'</em>, <em>'We're facing a latency spike'</em>).",
+          examples: [
+            "✅ Rotina: 'I usually check my PRs before the daily stand-up.'",
+            "✅ Em andamento: 'Right now, I'm debugging a memory leak in staging.'"
+          ]
+        },
+        resources: [
+          { name: "Série: Silicon Valley (S01E01 - E02)", type: "Entretenimento/Tech", desc: "Excelente para ouvir diálogos reais de desenvolvedores, startups e reuniões informais." },
+          { name: "Canal: TechLinked (YouTube)", type: "Notícias Tech", desc: "Vídeos curtos (5-8 min) com ritmo dinâmico para treinar o ouvido com notícias de hardware e software." },
+          { name: "Podcast: Syntax.fm (Trechos de 5 min)", type: "Áudio Tech", desc: "Conversa natural entre desenvolvedores sobre ferramentas e rotina de código." }
+        ],
+        vocabCategories: [
+          {
+            category: "Daily Stand-up & Status (20)",
+            items: [
+              { en: "stand-up meeting", pt: "reunião diária rápida" },
+              { en: "blocker", pt: "impedimento / travamento" },
+              { en: "on track", pt: "dentro do prazo / no caminho certo" },
+              { en: "behind schedule", pt: "atrasado no cronograma" },
+              { en: "wrap up", pt: "encerrar / finalizar algo" },
+              { en: "follow up", pt: "dar continuidade / acompanhar" },
+              { en: "catch up", pt: "atualizar-se / pôr em dia" },
+              { en: "handover", pt: "passagem de bastão / entrega" },
+              { en: "deliverable", pt: "entregável do projeto" },
+              { en: "workload", pt: "carga de trabalho" },
+              { en: "bandwidth", pt: "disponibilidade / tempo livre" },
+              { en: "sync up", pt: "alinhar rapidamente" },
+              { en: "touch base", pt: "fazer um contato rápido" },
+              { en: "heads-up", pt: "aviso prévio" },
+              { en: "bottleneck", pt: "gargalo no processo" },
+              { en: "milestone", pt: "marco importante" },
+              { en: "workflow", pt: "fluxo de trabalho" },
+              { en: "shift", pt: "turno / mudança" },
+              { en: "overtime", pt: "hora extra" },
+              { en: "burnout", pt: "esgotamento profissional" }
+            ]
+          },
+          {
+            category: "Setup, Hardware & Ferramentas (20)",
+            items: [
+              { en: "dual monitor", pt: "monitor duplo" },
+              { en: "mechanical keyboard", pt: "teclado mecânico" },
+              { en: "docking station", pt: "estação de conexão" },
+              { en: "noise-canceling", pt: "cancelamento de ruído" },
+              { en: "screen sharing", pt: "compartilhamento de tela" },
+              { en: "muted / unmuted", pt: "no mudo / com áudio ativado" },
+              { en: "lagging", pt: "travando / com atraso" },
+              { en: "glitch", pt: "falha visual/técnica rápida" },
+              { en: "shortcut", pt: "atalho de teclado" },
+              { en: "clipboard", pt: "área de transferência" },
+              { en: "browser tab", pt: "aba do navegador" },
+              { en: "bookmark", pt: "favorito no navegador" },
+              { en: "workspace", pt: "espaço de trabalho" },
+              { en: "cluttered", pt: "bagunçado / cheio de coisas" },
+              { en: "seamless", pt: "fluido / sem interrupções" },
+              { en: "built-in", pt: "embutido / integrado" },
+              { en: "customizable", pt: "personalizável" },
+              { en: "specs (specifications)", pt: "especificações técnicas" },
+              { en: "peripherals", pt: "periféricos" },
+              { en: "firmware", pt: "software interno do hardware" }
+            ]
+          },
+          {
+            category: "Verbos & Phrasal Verbs de Rotina (20)",
+            items: [
+              { en: "set up", pt: "configurar / montar" },
+              { en: "log in / log out", pt: "entrar / sair do sistema" },
+              { en: "back up", pt: "fazer cópia de segurança" },
+              { en: "boot up", pt: "inicializar o sistema" },
+              { en: "shut down", pt: "desligar completamente" },
+              { en: "figure out", pt: "descobrir / entender como resolver" },
+              { en: "look into", pt: "investigar / analisar" },
+              { en: "carry out", pt: "executar / realizar" },
+              { en: "sort out", pt: "organizar / resolver" },
+              { en: "run through", pt: "repassar rapidamente" },
+              { en: "keep up with", pt: "acompanhar o ritmo de" },
+              { en: "fall behind", pt: "ficar para trás" },
+              { en: "take over", pt: "assumir o controle/tarefa" },
+              { en: "fill in for", pt: "substituir alguém temporariamente" },
+              { en: "jot down", pt: "anotar rapidamente" },
+              { en: "streamline", pt: "otimizar / simplificar" },
+              { en: "prioritize", pt: "priorizar" },
+              { en: "troubleshoot", pt: "diagnosticar problemas" },
+              { en: "deploy", pt: "implantar / colocar no ar" },
+              { en: "maintain", pt: "manter" }
+            ]
+          },
+          {
+            category: "Expressões Prontas para Reuniões (16)",
+            items: [
+              { en: "Can you hear me clearly?", pt: "Vocês me ouvem bem?" },
+              { en: "You're on mute.", pt: "Seu microfone está mudo." },
+              { en: "Let me share my screen.", pt: "Deixa eu compartilhar minha tela." },
+              { en: "Yesterday I worked on...", pt: "Ontem eu trabalhei em..." },
+              { en: "Today I'm focusing on...", pt: "Hoje estou focando em..." },
+              { en: "I have no blockers at the moment.", pt: "Não tenho impedimentos no momento." },
+              { en: "I'm currently blocked by...", pt: "No momento estou travado por..." },
+              { en: "Could you repeat that last part?", pt: "Poderia repetir essa última parte?" },
+              { en: "Sorry, my connection dropped.", pt: "Desculpe, minha conexão caiu." },
+              { en: "Let's take this offline.", pt: "Vamos discutir isso fora desta reunião." },
+              { en: "Moving on to the next topic...", pt: "Passando para o próximo tópico..." },
+              { en: "Just to clarify...", pt: "Apenas para esclarecer..." },
+              { en: "That makes sense.", pt: "Isso faz sentido." },
+              { en: "I'll keep you posted.", pt: "Vou manter você atualizado." },
+              { en: "Sorry I'm late, I was in another call.", pt: "Desculpe o atraso, estava em outra chamada." },
+              { en: "Thanks everyone, have a great day!", pt: "Obrigado pessoal, tenham um ótimo dia!" }
+            ]
+          }
+        ],
+        days: [
+          {
+            id: "w1d1",
+            dayName: "Segunda",
+            focus: "Escuta Ativa & Sentence Mining",
+            technique: "Comprehensible Input + Sentence Mining",
+            resource: "TechLinked (Vídeo recente de 5-7 min no YouTube)",
+            description: "Assista aos primeiros 4 minutos de um vídeo do TechLinked com legendas em inglês ativadas (use o Language Reactor se possível). Não tente entender cada palavra isolada; foque na ideia geral. Pause sempre que ouvir uma frase útil para o seu dia a dia e extraia 4 frases completas para o seu Anki.",
+            timeline: [
+              { time: "00 - 05 min", task: "Assista ao trecho sem pausar apenas para acostumar o ouvido com a velocidade." },
+              { time: "05 - 20 min", task: "Reassista pausando, analise o vocabulário novo e minere 4 frases úteis." },
+              { time: "20 - 30 min", task: "Crie 4 cartões no Anki (Frente: frase em inglês com áudio; Verso: significado)." }
+            ],
+            microhabit: "Mude o idioma do seu celular e do seu ambiente de desenvolvimento (IDE/Browser) para o inglês hoje mesmo."
+          },
+          {
+            id: "w1d2",
+            dayName: "Terça",
+            focus: "Shadowing & Ritmo de Fala",
+            technique: "Shadowing + Chorusing",
+            resource: "Série Silicon Valley (Cena de reunião da Pied Piper - 2 min)",
+            description: "Escolha um diálogo curto de 90 segundos onde os personagens falam sobre o trabalho ou código. Ouça uma frase, pause e imite exatamente a melodia, as pausas e a conexão entre as palavras (connected speech), sem ler o texto se possível.",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão rápida dos flashcards de ontem no Anki." },
+              { time: "05 - 22 min", task: "Prática intensa de Shadowing: repita cada frase 4 vezes imitando o ator." },
+              { time: "22 - 30 min", task: "Grave sua voz lendo o diálogo e compare com o áudio original." }
+            ],
+            microhabit: "Ao preparar seu café ou almoço, narre mentalmente suas ações em inglês usando Present Continuous ('I am pouring water...')."
+          },
+          {
+            id: "w1d3",
+            dayName: "Quarta",
+            focus: "Leitura Ativa & Escrita com IA",
+            technique: "Active Output + AI Feedback",
+            resource: "Artigo curto do The Verge ou Hacker News + ChatGPT/Claude",
+            description: "Leia uma notícia curta de tecnologia (3 a 4 parágrafos). Em seguida, escreva um resumo de 5 a 6 linhas explicando o que você entendeu e como isso se relaciona com seu trabalho. Cole no ChatGPT com o prompt: 'Corrija meus erros e reescreva de forma natural como um profissional de tech B2 falaria'.",
+            timeline: [
+              { time: "00 - 10 min", task: "Leitura ativa do artigo sublinhando expressões idiomáticas." },
+              { time: "10 - 22 min", task: "Escrita do seu parágrafo sem usar tradutor (force o cérebro a buscar palavras)." },
+              { time: "22 - 30 min", task: "Análise das correções da IA e adição de 2 frases melhoradas ao Anki." }
+            ],
+            microhabit: "Olhe para sua mesa de trabalho e nomeie 10 objetos em voz alta em inglês (ex: 'coiled cable', 'webcam cover')."
+          },
+          {
+            id: "w1d4",
+            dayName: "Quinta",
+            focus: "Simulação de Daily Stand-up",
+            technique: "Roleplay & Pensar em Inglês",
+            resource: "Seu próprio trabalho atual + Simulador de Voz/IA",
+            description: "Simule sua participação em uma Daily Stand-up internacional. Responda em voz alta às 3 perguntas clássicas: 1) What did you do yesterday? 2) What are you working on today? 3) Do you have any blockers? Use o vocabulário da Semana 1.",
+            timeline: [
+              { time: "00 - 08 min", task: "Estruture tópicos (bullet points, não texto decorado) do seu status real." },
+              { time: "08 - 22 min", task: "Fale em voz alta por 2 minutos, grave, ouça onde travou e tente novamente." },
+              { time: "22 - 30 min", task: "Pesquise como dizer os termos específicos onde você travou e pratique." }
+            ],
+            microhabit: "Durante o banho ou caminhada, faça uma 'Daily mental' em inglês sobre suas tarefas pessoais do dia."
+          },
+          {
+            id: "w1d5",
+            dayName: "Sexta",
+            focus: "Interação com Conteúdo (Games & Séries)",
+            technique: "Active Content Interaction",
+            resource: "Vídeo de análise de game (IGN / GameSpot) ou trecho de série",
+            description: "Assista a um vídeo sobre um jogo ou série que você gosta. A cada 45 segundos, pause o vídeo e dê sua opinião em voz alta como se estivesse conversando com o apresentador (ex: 'I totally agree with that point because...', 'Actually, I think the gameplay is...').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão do Anki para consolidar a memória da semana." },
+              { time: "05 - 25 min", task: "Assistir pausando e interagindo em voz alta com o vídeo." },
+              { time: "25 - 30 min", task: "Anotar 3 gírias ou expressões naturais ouvidas no vídeo." }
+            ],
+            microhabit: "Treine o algoritmo do seu YouTube/X curtindo e comentando (mesmo que curto) em 3 posts em inglês hoje."
+          },
+          {
+            id: "w1d6",
+            dayName: "Sábado",
+            focus: "Revisão Espaçada & Monólogo Livre",
+            technique: "Spaced Repetition + Free Speaking",
+            resource: "Anki + Gravador de Voz do Celular",
+            description: "Dia de consolidar tudo. Faça todas as revisões pendentes do Anki. Depois, escolha um tema da semana (seu setup ou sua rotina de trabalho) e fale livremente por 4 minutos sem parar, mesmo que cometa erros.",
+            timeline: [
+              { time: "00 - 15 min", task: "Zerar fila de flashcards no Anki focando na pronúncia em voz alta." },
+              { time: "15 - 25 min", task: "Gravar áudio de 4 minutos falando sobre seu setup tech ideal." },
+              { time: "25 - 30 min", task: "Ouvir sua gravação e identificar 2 vícios de linguagem para melhorar." }
+            ],
+            microhabit: "Assista a um episódio de série ou gameplay em inglês hoje apenas por lazer, sem pausar para estudar."
+          },
+          {
+            id: "w1d7",
+            dayName: "Domingo",
+            focus: "Recarga do Barril de Conteúdos",
+            technique: "Curation & Environment Design",
+            resource: "YouTube Playlist 'Barril Tech' + Pocket/Notion",
+            description: "Prepare a Semana 2 para que você não gaste 1 minuto procurando material nos dias úteis. Selecione 3 vídeos curtos sobre bugs, falhas de sistemas ou curiosidades tech e salve na sua pasta.",
+            timeline: [
+              { time: "00 - 15 min", task: "Selecionar e salvar 3 vídeos e 2 artigos interessantes para a Semana 2." },
+              { time: "15 - 30 min", task: "Organizar o Barril de Conteúdos e revisar os vocábulos da Semana 2." }
+            ],
+            microhabit: "Deixe um podcast em inglês tocando em volume ambiente enquanto organiza sua semana."
+          }
+        ]
+      },
+
+      // ===================================================================
+      // SEMANA 2
+      // ===================================================================
+      {
+        weekNumber: 2,
+        month: 1,
+        theme: "Descrevendo Problemas, Bugs & Soluções no Dia a Dia",
+        subtitle: "Como relatar o que quebrou, explicar o que você já tentou fazer e comunicar soluções com clareza.",
+        grammar: {
+          title: "Past Simple vs. Present Perfect em Incidentes",
+          explanation: "Use <strong>Past Simple</strong> quando mencionar o momento exato em que algo ocorreu (<em>'The server crashed <strong>two hours ago</strong>'</em>, <em>'I deployed the hotfix <strong>yesterday</strong>'</em>). Use <strong>Present Perfect</strong> para ações passadas sem tempo definido que afetam o presente ou experiências (<em>'I <strong>have already checked</strong> the logs'</em>, <em>'We <strong>haven't found</strong> the root cause yet'</em>).",
+          examples: [
+            "✅ Sem tempo específico (impacta agora): 'I've restarted the container, and it's working now.'",
+            "✅ Com tempo específico: 'The database went down at 3 PM.'"
+          ]
+        },
+        resources: [
+          { name: "Canal: Fireship (YouTube - Code Report)", type: "Tech Rápido", desc: "Vídeos de 3-5 minutos sobre bugs famosos, lançamentos e problemas reais de engenharia." },
+          { name: "Canal: Veritasium (Curiosidades)", type: "Ciência & Tech", desc: "Excelente dicção e storytelling sobre falhas de engenharia e curiosidades." },
+          { name: "Série: Mr. Robot ou Silicon Valley", type: "Séries", desc: "Cenas de resolução de problemas sob pressão e comunicação técnica." }
+        ],
+        vocabCategories: [
+          {
+            category: "Bugs, Falhas & Incidentes (20)",
+            items: [
+              { en: "root cause", pt: "causa raiz do problema" },
+              { en: "outage / downtime", pt: "queda do sistema / indisponibilidade" },
+              { en: "crash", pt: "travamento total / queda" },
+              { en: "edge case", pt: "caso extremo / cenário raro" },
+              { en: "workaround", pt: "solução alternativa / 'gambiarra' temporária" },
+              { en: "hotfix", pt: "correção urgente em produção" },
+              { en: "rollback", pt: "reverter para versão anterior" },
+              { en: "memory leak", pt: "vazamento de memória" },
+              { en: "latency spike", pt: "pico de latência / lentidão" },
+              { en: "deprecated", pt: "descontinuado / obsoleto" },
+              { en: "broken build", pt: "compilação quebrada" },
+              { en: "syntax error", pt: "erro de sintaxe" },
+              { en: "unresponsive", pt: "que não responde / travado" },
+              { en: "corrupted file", pt: "arquivo corrompido" },
+              { en: "flaky test", pt: "teste instável (ora passa, ora falha)" },
+              { en: "regression", pt: "retorno de um bug antigo" },
+              { en: "issue tracker", pt: "rastreador de tarefas/bugs" },
+              { en: "severity", pt: "gravidade do incidente" },
+              { en: "reproduce the bug", pt: "reproduzir o erro" },
+              { en: "side effect", pt: "efeito colateral" }
+            ]
+          },
+          {
+            category: "Verbos de Investigação & Solução (20)",
+            items: [
+              { en: "pinpoint", pt: "identificar com precisão" },
+              { en: "narrow down", pt: "reduzir as possibilidades / afunilar" },
+              { en: "rule out", pt: "descartar uma hipótese" },
+              { en: "track down", pt: "rastrear até encontrar" },
+              { en: "patch", pt: "aplicar correção" },
+              { en: "overlook", pt: "deixar passar despercebido" },
+              { en: "mess up", pt: "estragar / bagunçar algo" },
+              { en: "break down", pt: "quebrar / dividir em partes" },
+              { en: "act up", pt: "começar a funcionar mal" },
+              { en: "iron out", pt: "aparar arestas / resolver detalhes" },
+              { en: "escalate", pt: "escalar o problema para nível superior" },
+              { en: "mitigate", pt: "mitigar / reduzir o impacto" },
+              { en: "bypass", pt: "contornar / pular etapa" },
+              { en: "trigger", pt: "disparar / causar" },
+              { en: "handle", pt: "lidar com / tratar" },
+              { en: "resolve", pt: "resolver definitivamente" },
+              { en: "verify", pt: "verificar / confirmar" },
+              { en: "investigate", pt: "investigar" },
+              { en: "restore", pt: "restaurar" },
+              { en: "prevent", pt: "prevenir" }
+            ]
+          },
+          {
+            category: "Conectivos de Causa & Consequência (18)",
+            items: [
+              { en: "due to", pt: "devido a" },
+              { en: "as a result", pt: "como resultado" },
+              { en: "therefore", pt: "portanto" },
+              { en: "since", pt: "já que / visto que" },
+              { en: "otherwise", pt: "caso contrário" },
+              { en: "turns out (that)", pt: "acaba que / descobriu-se que" },
+              { en: "so far", pt: "até agora" },
+              { en: "eventually", pt: "finalmente / por fim" },
+              { en: "meanwhile", pt: "enquanto isso" },
+              { en: "instead of", pt: "em vez de" },
+              { en: "regardless of", pt: "independentemente de" },
+              { en: "in order to", pt: "a fim de / para" },
+              { en: "by accident", pt: "por acidente" },
+              { en: "all of a sudden", pt: "de repente" },
+              { en: "at first", pt: "a princípio" },
+              { en: "on top of that", pt: "além disso tudo" },
+              { en: "for the time being", pt: "por enquanto" },
+              { en: "in the long run", pt: "a longo prazo" }
+            ]
+          },
+          {
+            category: "Frases de Troubleshooting em Reuniões (18)",
+            items: [
+              { en: "It works on my machine.", pt: "Funciona na minha máquina." },
+              { en: "I'm trying to reproduce the issue.", pt: "Estou tentando reproduzir o problema." },
+              { en: "We've narrowed it down to the API.", pt: "Afunilamos o problema para a API." },
+              { en: "Have you tried clearing the cache?", pt: "Você já tentou limpar o cache?" },
+              { en: "It turns out it was a config typo.", pt: "Descobrimos que era um erro de digitação na config." },
+              { en: "We applied a temporary workaround.", pt: "Aplicamos uma solução temporária." },
+              { en: "The issue has been resolved.", pt: "O problema foi resolvido." },
+              { en: "I'll push a hotfix shortly.", pt: "Vou subir uma correção urgente em breve." },
+              { en: "Something went wrong during deployment.", pt: "Algo deu errado durante o deploy." },
+              { en: "Let's check the error logs first.", pt: "Vamos checar os logs de erro primeiro." },
+              { en: "We need to rule out network issues.", pt: "Precisamos descartar problemas de rede." },
+              { en: "I accidentally broke the staging env.", pt: "Eu quebrei o ambiente de testes sem querer." },
+              { en: "Are we seeing this in production?", pt: "Estamos vendo isso em produção?" },
+              { en: "I haven't had a chance to look at it yet.", pt: "Ainda não tive chance de olhar isso." },
+              { en: "That explains why it was failing.", pt: "Isso explica por que estava falhando." },
+              { en: "Let's monitor it for the next hour.", pt: "Vamos monitorar pela próxima hora." },
+              { en: "I'll write a post-mortem report.", pt: "Vou escrever um relatório pós-incidente." },
+              { en: "Good catch!", pt: "Boa observação / Bem visto!" }
+            ]
+          }
+        ],
+        days: [
+          {
+            id: "w2d1",
+            dayName: "Segunda",
+            focus: "Escuta Ativa & Sentence Mining",
+            technique: "Comprehensible Input + Sentence Mining",
+            resource: "Canal Fireship (Vídeo sobre um bug famoso ou lançamento tech)",
+            description: "Vídeos do Fireship são rápidos e densos em vocabulário real. Assista uma vez com legenda em inglês em velocidade 0.9x se necessário. Depois, volte para velocidade 1.0x e minere 4 frases usando Present Perfect ou descrevendo problemas técnicos.",
+            timeline: [
+              { time: "00 - 06 min", task: "Assistir o vídeo completo em 0.9x para absorver o contexto." },
+              { time: "06 - 20 min", task: "Reassistir em 1.0x pausando e anotando 4 frases de troubleshooting." },
+              { time: "20 - 30 min", task: "Adicionar as 4 frases ao Anki com contexto." }
+            ],
+            microhabit: "Sempre que um app ou site demorar para carregar hoje, diga em inglês: 'It's lagging' ou 'Something must be down'."
+          },
+          {
+            id: "w2d2",
+            dayName: "Terça",
+            focus: "Shadowing de Explicações Técnicas",
+            technique: "Shadowing + Connected Speech",
+            resource: "Canal Veritasium (Trecho de 2 min explicando uma falha de engenharia)",
+            description: "O apresentador do Veritasium tem uma pronúncia excelente e clara. Escolha 2 minutos onde ele explica por que algo deu errado. Pratique o shadowing focando nas palavras de ligação ('due to', 'as a result', 'turns out').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisar flashcards pendentes no Anki." },
+              { time: "05 - 22 min", task: "Shadowing frase por frase do trecho selecionado (repetir 3-4x cada)." },
+              { time: "22 - 30 min", task: "Ler a transcrição em voz alta tentando manter a mesma entonação." }
+            ],
+            microhabit: "Ouça 10 minutos de um podcast de tecnologia ou curiosidades enquanto se desloca ou faz tarefas domésticas."
+          },
+          {
+            id: "w2d3",
+            dayName: "Quarta",
+            focus: "Relatório de Incidente com IA",
+            technique: "Active Writing + AI Correction",
+            resource: "Um bug real que você resolveu recentemente + ChatGPT/Claude",
+            description: "Escreva um mini 'Post-Mortem' (6 a 8 linhas) relatando um problema técnico ou cotidiano que aconteceu recentemente: o que aconteceu (Past Simple), o que você já fez (Present Perfect) e qual foi a solução. Peça para a IA corrigir e sugerir sinônimos mais avançados.",
+            timeline: [
+              { time: "00 - 15 min", task: "Escrever o relato em inglês sem consultar dicionário primeiro." },
+              { time: "15 - 22 min", task: "Submeter à IA pedindo feedback de naturalidade e gramática." },
+              { time: "22 - 30 min", task: "Ler a versão corrigida pela IA 5 vezes em voz alta." }
+            ],
+            microhabit: "Ao encontrar um problema no trabalho ou em casa, formule a pergunta em inglês antes de pesquisar no Google."
+          },
+          {
+            id: "w2d4",
+            dayName: "Quinta",
+            focus: "Roleplay: Sala de Guerra (War Room)",
+            technique: "Situational Roleplay",
+            resource: "Prompt de Simulação no ChatGPT (Modo Voz ou Texto)",
+            description: "Simule que o servidor de produção caiu e seu Tech Lead americano está perguntando o que está acontecendo. Responda em voz alta usando expressões como 'We're looking into it', 'We haven't pinpointed the root cause yet', 'We're applying a workaround'.",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisar a lista de frases de Troubleshooting desta semana." },
+              { time: "05 - 23 min", task: "Simular 3 cenários de bugs diferentes falando em voz alta." },
+              { time: "23 - 30 min", task: "Anotar as frases onde você hesitou para praticar amanhã." }
+            ],
+            microhabit: "Pratique o 'Rubber Duck Debugging' (explicar seu código/problema para um objeto na mesa) falando em inglês."
+          },
+          {
+            id: "w2d5",
+            dayName: "Sexta",
+            focus: "Interação com Conteúdo (Games/Séries)",
+            technique: "Active Video Interaction",
+            resource: "Gameplay com comentários (YouTube/Twitch) ou Série",
+            description: "Assista a um vídeo de gameplay onde o jogador enfrenta uma fase difícil ou um bug no jogo. Pause o vídeo e comente o que deu errado e o que ele deveria ter feito ('He overlooked that enemy', 'That glitch ruined his run').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão rápida do Anki." },
+              { time: "05 - 25 min", task: "Assistir ao vídeo pausando a cada minuto para narrar e comentar." },
+              { time: "25 - 30 min", task: "Salvar 3 expressões informais no seu caderno digital/Anki." }
+            ],
+            microhabit: "Jogue algum game hoje com áudio e legendas em inglês, prestando atenção nos diálogos."
+          },
+          {
+            id: "w2d6",
+            dayName: "Sábado",
+            focus: "Revisão Espaçada & Storytelling",
+            technique: "Spaced Repetition + Monologue",
+            resource: "Anki + Gravador de Voz",
+            description: "Após zerar o Anki, conte em voz alta (gravando por 4 minutos) a história do pior bug ou problema técnico que você já enfrentou na carreira ou nos estudos.",
+            timeline: [
+              { time: "00 - 15 min", task: "Revisão completa do Anki." },
+              { time: "15 - 25 min", task: "Gravar o relato do problema técnico em 4 minutos." },
+              { time: "25 - 30 min", task: "Ouvir e verificar se você usou Past Simple e Present Perfect corretamente." }
+            ],
+            microhabit: "Leia uma thread técnica no Reddit (r/programming ou r/ExperiencedDevs) em inglês."
+          },
+          {
+            id: "w2d7",
+            dayName: "Domingo",
+            focus: "Recarga do Barril de Conteúdos",
+            technique: "Curation & Preparation",
+            resource: "YouTube + Podcasts",
+            description: "Abasteça sua pasta para a Semana 3 (foco em opiniões, reviews e debates). Selecione 2 reviews de jogos ou gadgets e 1 trecho de podcast de tecnologia (ex: Lex Fridman).",
+            timeline: [
+              { time: "00 - 15 min", task: "Selecionar os vídeos/podcasts da Semana 3." },
+              { time: "15 - 30 min", task: "Dar uma olhada geral no vocabulário da Semana 3." }
+            ],
+            microhabit: "Descanse os estudos ativos e consuma apenas algo divertido em inglês."
+          }
+        ]
+      },
+
+      // ===================================================================
+      // SEMANA 3
+      // ===================================================================
+      {
+        weekNumber: 3,
+        month: 1,
+        theme: "Expressando Opiniões, Concordando e Discordando",
+        subtitle: "Como defender ideias em reuniões sem soar rude (diplomacia corporativa) e debater sobre séries e games.",
+        grammar: {
+          title: "Modal Verbs para Polidez & Certeza (Could, Might, Should, Would)",
+          explanation: "Em inglês corporativo, discordar diretamente com <em>'You are wrong'</em> ou <em>'We must do X'</em> soa agressivo. Use modais para suavizar: <em>'That <strong>might</strong> cause performance issues'</em> (Isso pode causar...), <em>'<strong>Could</strong> we consider another approach?'</em> (Poderíamos considerar...), <em>'I <strong>would</strong> suggest using Redis here'</em> (Eu sugeriria...).",
+          examples: [
+            "✅ Direto demais: 'This architecture won't scale.'",
+            "✅ Diplomático (B2/C1): 'I'm concerned this architecture might not scale well.'"
+          ]
+        },
+        resources: [
+          { name: "Podcast: Lex Fridman (Cortes de 5-8 min)", type: "Debate Tech", desc: "Excelente para ouvir opiniões bem articuladas e discordâncias respeitosas sobre IA e programação." },
+          { name: "Canal: Digital Foundry ou Skill Up", type: "Reviews de Games", desc: "Vocabulário riquíssimo para expressar opiniões, elogiar e criticar produtos." },
+          { name: "Série: Succession ou Silicon Valley", type: "Séries", desc: "Reuniões intensas com muita argumentação e jogos de poder." }
+        ],
+        vocabCategories: [
+          {
+            category: "Concordar & Discordar com Diplomacia (20)",
+            items: [
+              { en: "I see your point, however...", pt: "Entendo seu ponto, no entanto..." },
+              { en: "I couldn't agree more", pt: "Concordo plenamente" },
+              { en: "fair enough", pt: "justo / faz sentido (aceitando um argumento)" },
+              { en: "on the other hand", pt: "por outro lado" },
+              { en: "from my perspective", pt: "da minha perspectiva" },
+              { en: "it depends on", pt: "depende de" },
+              { en: "I'm not entirely convinced", pt: "Não estou totalmente convencido" },
+              { en: "have you considered...?", pt: "você já considerou...?" },
+              { en: "what if we...?", pt: "e se nós...?" },
+              { en: "that's a valid concern", pt: "essa é uma preocupação válida" },
+              { en: "I'm leaning towards...", pt: "Estou tendendo a escolher..." },
+              { en: "pros and cons", pt: "prós e contras" },
+              { en: "trade-off", pt: "escolha de troca / concessão técnica" },
+              { en: "deal-breaker", pt: "fator decisivo que impede um acordo" },
+              { en: "game-changer", pt: "algo que muda completamente o jogo" },
+              { en: "overrated / underrated", pt: "superestimado / subestimado" },
+              { en: "worth the effort", pt: "vale o esforço" },
+              { en: "counterintuitive", pt: "contraintuitivo" },
+              { en: "biased", pt: "tendencioso / enviesado" },
+              { en: "consensus", pt: "consenso" }
+            ]
+          },
+          {
+            category: "Reviews, Qualidade & Crítica (Games/Tech) (20)",
+            items: [
+              { en: "masterpiece", pt: "obra-prima" },
+              { en: "polished", pt: "bem acabado / refinado" },
+              { en: "clunky", pt: "desajeitado / pouco fluido (UI ou gameplay)" },
+              { en: "intuitive", pt: "intuitivo" },
+              { en: "steep learning curve", pt: "curva de aprendizado íngreme/difícil" },
+              { en: "immersive", pt: "imersivo" },
+              { en: "storyline / plot", pt: "enredo / história" },
+              { en: "pacing", pt: "ritmo da narrativa ou jogo" },
+              { en: "frame rate drop", pt: "queda de taxa de quadros (FPS)" },
+              { en: "stunning visuals", pt: "visuais impressionantes" },
+              { en: "repetitive", pt: "repetitivo" },
+              { en: "groundbreaking", pt: "inovador / revolucionário" },
+              { en: "cutting-edge", pt: "de ponta / última geração" },
+              { en: "bloatware", pt: "software pesado/desnecessário" },
+              { en: "user-friendly", pt: "amigável ao usuário" },
+              { en: "reliable", pt: "confiável" },
+              { en: "scalable", pt: "escalável" },
+              { en: "maintainable", pt: "fácil de manter" },
+              { en: "overhyped", pt: "com expectativa exagerada" },
+              { en: "letdown", pt: "decepção" }
+            ]
+          },
+          {
+            category: "Conectivos de Argumentação (18)",
+            items: [
+              { en: "furthermore / moreover", pt: "além disso" },
+              { en: "nevertheless / nonetheless", pt: "ainda assim / no entanto" },
+              { en: "even though", pt: "embora / mesmo que" },
+              { en: "despite / in spite of", pt: "apesar de" },
+              { en: "as long as", pt: "contanto que" },
+              { en: "unless", pt: "a menos que" },
+              { en: "in my experience", pt: "na minha experiência" },
+              { en: "to be honest", pt: "para ser honesto" },
+              { en: "frankly speaking", pt: "falando francamente" },
+              { en: "broadly speaking", pt: "de modo geral" },
+              { en: "in a nutshell", pt: "em resumo / em poucas palavras" },
+              { en: "the bottom line is", pt: "o ponto principal é / no fim das contas" },
+              { en: "at the end of the day", pt: "no final das contas" },
+              { en: "on balance", pt: "pesando todos os lados" },
+              { en: "particularly", pt: "particularmente" },
+              { en: "arguably", pt: "pode-se dizer que / discutivelmente" },
+              { en: "presumably", pt: "presumivelmente" },
+              { en: "apparently", pt: "aparentemente" }
+            ]
+          },
+          {
+            category: "Expressões para Code Review & Arquitetura (18)",
+            items: [
+              { en: "I'd suggest refactoring this part.", pt: "Eu sugeriria refatorar esta parte." },
+              { en: "Could we simplify this logic?", pt: "Poderíamos simplificar essa lógica?" },
+              { en: "What's the trade-off here?", pt: "Qual é a troca/custo-benefício aqui?" },
+              { en: "I think this might cause a bottleneck.", pt: "Acho que isso pode causar um gargalo." },
+              { en: "That's a great point, I hadn't thought of that.", pt: "Ótimo ponto, eu não tinha pensado nisso." },
+              { en: "Let's weigh the pros and cons.", pt: "Vamos pesar os prós e contras." },
+              { en: "I'm fine with either option.", pt: "Por mim tudo bem qualquer uma das opções." },
+              { en: "It's a bit overkill for our current needs.", pt: "É um pouco exagerado para nossas necessidades atuais." },
+              { en: "Let's keep it simple for now.", pt: "Vamos manter simples por enquanto." },
+              { en: "Do you have a strong opinion on this?", pt: "Você tem uma opinião forte sobre isso?" },
+              { en: "I'm open to suggestions.", pt: "Estou aberto a sugestões." },
+              { en: "We need to find a middle ground.", pt: "Precisamos encontrar um meio-termo." },
+              { en: "That approach seems more scalable.", pt: "Essa abordagem parece mais escalável." },
+              { en: "Let's not reinvent the wheel.", pt: "Não vamos reinventar a roda." },
+              { en: "Makes total sense to me.", pt: "Faz todo sentido para mim." },
+              { en: "I have mixed feelings about this.", pt: "Tenho sentimentos mistos sobre isso." },
+              { en: "Just playing devil's advocate here...", pt: "Apenas fazendo o papel de advogado do diabo aqui..." },
+              { en: "Looks good to me (LGTM)!", pt: "Parece bom para mim!" }
+            ]
+          }
+        ],
+        days: [
+          {
+            id: "w3d1",
+            dayName: "Segunda",
+            focus: "Escuta Ativa & Sentence Mining",
+            technique: "Comprehensible Input + Sentence Mining",
+            resource: "Lex Fridman Clips (Debate sobre IA, programação ou futuro tech)",
+            description: "Assista a um corte de 5 minutos onde dois especialistas debatem uma ideia. Observe como eles introduzem opiniões ('I would argue that...', 'From my perspective...'). Minere 4 frases de opinião para o seu Anki.",
+            timeline: [
+              { time: "00 - 06 min", task: "Ouvir o debate completo acompanhando a legenda em inglês." },
+              { time: "06 - 20 min", task: "Pausar e extrair 4 estruturas de argumentação e opinião." },
+              { time: "20 - 30 min", task: "Criar os flashcards no Anki focando na entonação." }
+            ],
+            microhabit: "Ao ler qualquer notícia hoje, pergunte a si mesmo em inglês: 'What are the pros and cons of this?'"
+          },
+          {
+            id: "w3d2",
+            dayName: "Terça",
+            focus: "Shadowing de Reviews & Críticas",
+            technique: "Shadowing Expressivo",
+            resource: "Canal Skill Up ou Digital Foundry (Review de um jogo recente - 2 min)",
+            description: "Reviews de games têm muita emoção, ênfase e adjetivos ricos. Faça shadowing de 2 minutos de uma crítica, imitando a ênfase nas palavras ('stunning visuals', 'clunky controls', 'nevertheless').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão rápida do Anki." },
+              { time: "05 - 22 min", task: "Shadowing intenso focando na expressividade e ritmo." },
+              { time: "22 - 30 min", task: "Repetir as 5 frases mais difíceis sem olhar o texto." }
+            ],
+            microhabit: "Dê uma mini-review mental em inglês de 30 segundos sobre o último filme, série ou jogo que você consumiu."
+          },
+          {
+            id: "w3d3",
+            dayName: "Quarta",
+            focus: "Escrita Argumentativa (Prós e Contras)",
+            technique: "Structured Writing + AI Refinement",
+            resource: "Tema Tech (ex: Remote work vs Office, ou React vs Vue) + IA",
+            description: "Escreva 2 parágrafos curtos apresentando os prós e contras de uma tecnologia ou modelo de trabalho. Use conectivos da semana ('on the other hand', 'trade-off', 'however') e modais ('might', 'could'). Peça à IA para elevar o nível do texto para B2/C1.",
+            timeline: [
+              { time: "00 - 15 min", task: "Escrever o texto argumentativo sem tradutor." },
+              { time: "15 - 23 min", task: "Comparar sua versão com a versão aprimorada pela IA." },
+              { time: "23 - 30 min", task: "Salvar 2 conectivos avançados no Anki." }
+            ],
+            microhabit: "Troque o idioma das buscas de reviews de produtos/jogos no YouTube para o inglês."
+          },
+          {
+            id: "w3d4",
+            dayName: "Quinta",
+            focus: "Roleplay: Code Review & Arquitetura",
+            technique: "Diplomatic Debate Roleplay",
+            resource: "Simulação de Reunião Técnica em Voz Alta",
+            description: "Simule que um colega propôs uma solução muito complexa para um problema simples. Pratique discordar educadamente em voz alta usando: 'I see your point, however...', 'Wouldn't that be a bit overkill?', 'What if we kept it simple for now?'.",
+            timeline: [
+              { time: "00 - 05 min", task: "Ler em voz alta a lista de expressões de Code Review da semana." },
+              { time: "05 - 22 min", task: "Praticar 4 respostas diplomáticas diferentes em voz alta." },
+              { time: "22 - 30 min", task: "Gravar sua melhor argumentação de 2 minutos e ouvir." }
+            ],
+            microhabit: "Quando discordar de alguém no trânsito, nas notícias ou no trabalho, traduza sua objeção para um inglês educado na sua mente."
+          },
+          {
+            id: "w3d5",
+            dayName: "Sexta",
+            focus: "Interação com Conteúdo (Debate com Vídeo)",
+            technique: "Pause & Counter-Argue",
+            resource: "Vídeo de opinião sobre Tech ou Games",
+            description: "Assista a um vídeo onde o criador dá uma opinião polêmica ou forte. Pause a cada argumento dele e concorde ou discorde em voz alta ('I couldn't agree more because...', 'Actually, I have mixed feelings about that...').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão rápida do Anki." },
+              { time: "05 - 25 min", task: "Assistir pausando e debatendo em voz alta com o vídeo." },
+              { time: "25 - 30 min", task: "Anotar expressões idiomáticas interessantes." }
+            ],
+            microhabit: "Escreva um comentário real em inglês (2-3 linhas) em um vídeo do YouTube que você assistiu hoje."
+          },
+          {
+            id: "w3d6",
+            dayName: "Sábado",
+            focus: "Revisão Espaçada & Review em Áudio",
+            technique: "Spaced Repetition + Opinion Monologue",
+            resource: "Anki + Gravador de Voz",
+            description: "Após revisar seus flashcards, grave um áudio de 5 minutos fazendo uma review completa do seu jogo ou série favorita, explicando por que recomenda e quais são os pontos fracos.",
+            timeline: [
+              { time: "00 - 15 min", task: "Zerar revisões do Anki." },
+              { time: "15 - 25 min", task: "Gravar a review de 5 minutos sem roteiro escrito." },
+              { time: "25 - 30 min", task: "Ouvir o áudio e avaliar sua fluidez e uso de conectivos." }
+            ],
+            microhabit: "Assista a um vídeo longo (20+ min) de curiosidades ou lore de games em inglês."
+          },
+          {
+            id: "w3d7",
+            dayName: "Domingo",
+            focus: "Recarga do Barril de Conteúdos",
+            technique: "Curation & Planning",
+            resource: "YouTube + Artigos Tech",
+            description: "Prepare os materiais da Semana 4 (foco em planejamento de sprints, futuro e tomada de decisões).",
+            timeline: [
+              { time: "00 - 15 min", task: "Salvar 3 vídeos sobre tendências futuras de tecnologia/games." },
+              { time: "15 - 30 min", task: "Revisar o vocabulário da Semana 4 antes de dormir." }
+            ],
+            microhabit: "Revise mentalmente as 5 melhores expressões que você aprendeu neste mês até agora."
+          }
+        ]
+      },
+
+      // ===================================================================
+      // SEMANA 4
+      // ===================================================================
+      {
+        weekNumber: 4,
+        month: 1,
+        theme: "Planejamento de Sprints, Futuro & Tomada de Decisões",
+        subtitle: "Como falar sobre prazos, metas, estimativas, riscos futuros e fechar decisões em reuniões.",
+        grammar: {
+          title: "Formas do Futuro (Going to, Will, Present Continuous) & First Conditional",
+          explanation: "Use <strong>Going to</strong> para planos e metas da sprint já decididos (<em>'We're going to migrate the database next week'</em>). Use <strong>Present Continuous</strong> para reuniões e entregas agendadas com data/hora (<em>'I'm demoing the feature on Friday'</em>). Use <strong>Will</strong> para decisões tomadas na hora da reunião ou previsões (<em>'I'll send you the invite right now'</em>). Combine com <strong>First Conditional</strong> para riscos: <em>'If we don't freeze the code today, we will miss the deadline.'</em>",
+          examples: [
+            "✅ Plano da Sprint: 'We're going to prioritize performance in Q3.'",
+            "✅ Risco / Condição: 'If the API isn't ready by Thursday, we'll have to postpone the launch.'"
+          ]
+        },
+        resources: [
+          { name: "Canal: MKBHD (Marques Brownlee)", type: "Tech & Futuro", desc: "Análises claras sobre o futuro da tecnologia, gadgets e tendências de mercado." },
+          { name: "Canal: ColdFusion (YouTube)", type: "Documentários Tech", desc: "Histórias fascinantes sobre empresas de tecnologia, estratégia e decisões de negócios." },
+          { name: "Série: Silicon Valley (Final da Temp. 1)", type: "Séries", desc: "Excelente para vocabulário de pitches, metas, prazos e tomada de decisão sob pressão." }
+        ],
+        vocabCategories: [
+          {
+            category: "Sprint Planning, Roadmap & Metas (20)",
+            items: [
+              { en: "roadmap", pt: "mapa de planejamento / cronograma estratégico" },
+              { en: "backlog", pt: "lista de tarefas pendentes" },
+              { en: "scope", pt: "escopo do projeto" },
+              { en: "scope creep", pt: "aumento descontrolado do escopo" },
+              { en: "deadline / ETA", pt: "prazo final / tempo estimado de entrega" },
+              { en: "estimate", pt: "estimativa de esforço/tempo" },
+              { en: "story points", pt: "pontos de esforço da tarefa" },
+              { en: "rollout", pt: "lançamento gradual" },
+              { en: "feature freeze", pt: "congelamento de novas funcionalidades" },
+              { en: "quarter (Q1, Q2...)", pt: "trimestre fiscal" },
+              { en: "KPI / metric", pt: "indicador-chave de desempenho" },
+              { en: "target", pt: "meta / alvo" },
+              { en: "benchmark", pt: "referência / teste de desempenho" },
+              { en: "feasibility", pt: "viabilidade técnica" },
+              { en: "dependency", pt: "dependência entre tarefas" },
+              { en: "allocation", pt: "alocação de recursos/pessoas" },
+              { en: "capacity", pt: "capacidade de entrega do time" },
+              { en: "sprint retrospective", pt: "reunião de retrospectiva da sprint" },
+              { en: "action items", pt: "itens de ação definidos na reunião" },
+              { en: "takeaways", pt: "principais conclusões / aprendizados" }
+            ]
+          },
+          {
+            category: "Verbos de Decisão & Planejamento (20)",
+            items: [
+              { en: "schedule / reschedule", pt: "agendar / reagendar" },
+              { en: "postpone / push back", pt: "adiar / empurrar o prazo" },
+              { en: "bring forward", pt: "antecipar uma data" },
+              { en: "commit to", pt: "comprometer-se com" },
+              { en: "allocate", pt: "alocar / destinar" },
+              { en: "delegate", pt: "delegar tarefas" },
+              { en: "assess", pt: "avaliar riscos/impacto" },
+              { en: "forecast", pt: "prever / projetar" },
+              { en: "aim for", pt: "mirar em / ter como objetivo" },
+              { en: "reach a decision", pt: "chegar a uma decisão" },
+              { en: "call it a day", pt: "encerrar o trabalho por hoje" },
+              { en: "kick off", pt: "dar o pontapé inicial" },
+              { en: "phase out", pt: "descontinuar gradualmente" },
+              { en: "scale up", pt: "escalar / expandir" },
+              { en: "cut back on", pt: "reduzir gastos ou escopo" },
+              { en: "sign off on", pt: "aprovar formalmente" },
+              { en: "align on", pt: "alinhar-se sobre algo" },
+              { en: "brainstorm", pt: "ter ideias em grupo" },
+              { en: "outline", pt: "esboçar / delinear" },
+              { en: "execute", pt: "executar" }
+            ]
+          },
+          {
+            category: "Expressões de Tempo, Prazo & Probabilidade (18)",
+            items: [
+              { en: "by the end of the day (EOD)", pt: "até o final do dia" },
+              { en: "by the end of the week (EOW)", pt: "até o final da semana" },
+              { en: "as soon as possible (ASAP)", pt: "o mais rápido possível" },
+              { en: "in the near future", pt: "num futuro próximo" },
+              { en: "down the road", pt: "mais para frente / no futuro" },
+              { en: "ahead of time", pt: "com antecedência" },
+              { en: "at the last minute", pt: "no último minuto" },
+              { en: "around the corner", pt: "logo ali / muito próximo de acontecer" },
+              { en: "likely / unlikely", pt: "provável / improvável" },
+              { en: "bound to happen", pt: "certo de acontecer" },
+              { en: "up in the air", pt: "indefinido / no ar" },
+              { en: "set in stone", pt: "definitivo / imutável" },
+              { en: "tentative date", pt: "data provisória" },
+              { en: "worst-case scenario", pt: "pior cenário possível" },
+              { en: "best-case scenario", pt: "melhor cenário possível" },
+              { en: "given the circumstances", pt: "dadas as circunstâncias" },
+              { en: "moving forward", pt: "daqui para frente" },
+              { en: "step by step", pt: "passo a passo" }
+            ]
+          },
+          {
+            category: "Frases de Fechamento & Decisão em Reuniões (18)",
+            items: [
+              { en: "What's our ETA on this feature?", pt: "Qual nossa estimativa de entrega nisso?" },
+              { en: "We might need to push back the release.", pt: "Talvez precisemos adiar o lançamento." },
+              { en: "Nothing is set in stone yet.", pt: "Nada é definitivo ainda." },
+              { en: "Let's finalize the scope before we start.", pt: "Vamos finalizar o escopo antes de começar." },
+              { en: "Who's taking ownership of this task?", pt: "Quem vai assumir a responsabilidade por essa tarefa?" },
+              { en: "I'll take care of that by EOD.", pt: "Eu cuido disso até o fim do dia." },
+              { en: "If everything goes smoothly, we'll launch Friday.", pt: "Se tudo correr bem, lançamos na sexta." },
+              { en: "Let's recap the action items.", pt: "Vamos recapitular os itens de ação." },
+              { en: "Are we all aligned on the next steps?", pt: "Estamos todos alinhados nos próximos passos?" },
+              { en: "Let's aim for a Tuesday release.", pt: "Vamos mirar em um lançamento na terça." },
+              { en: "That sounds like a solid plan.", pt: "Isso parece um plano sólido." },
+              { en: "We need to prioritize high-impact tasks.", pt: "Precisamos priorizar tarefas de alto impacto." },
+              { en: "Let's revisit this in the next sprint.", pt: "Vamos revisitar isso na próxima sprint." },
+              { en: "I'll send a follow-up email with the notes.", pt: "Vou enviar um e-mail de acompanhamento com as notas." },
+              { en: "Do we have enough bandwidth for this?", pt: "Temos capacidade/tempo suficiente para isso?" },
+              { en: "Let's kick off the meeting.", pt: "Vamos dar início à reunião." },
+              { en: "Thanks for your time, everyone.", pt: "Obrigado pelo tempo de vocês, pessoal." },
+              { en: "Talk to you soon!", pt: "Falo com vocês em breve!" }
+            ]
+          }
+        ],
+        days: [
+          {
+            id: "w4d1",
+            dayName: "Segunda",
+            focus: "Escuta Ativa & Sentence Mining",
+            technique: "Comprehensible Input + Sentence Mining",
+            resource: "Canal MKBHD (Vídeo sobre o futuro de alguma tecnologia/smartphone)",
+            description: "MKBHD tem uma fala extremamente articulada e usa muito futuro e condicionais ('If Apple decides to...', 'Moving forward, we're going to see...'). Minere 4 frases sobre planos e previsões futuras.",
+            timeline: [
+              { time: "00 - 06 min", task: "Assistir aos primeiros 5 minutos do vídeo com legenda em inglês." },
+              { time: "06 - 20 min", task: "Pausar e extrair 4 frases sobre futuro, metas ou decisões." },
+              { time: "20 - 30 min", task: "Inserir as 4 frases no Anki." }
+            ],
+            microhabit: "Planeje suas 3 prioridades de amanhã em inglês antes de fechar o computador hoje."
+          },
+          {
+            id: "w4d2",
+            dayName: "Terça",
+            focus: "Shadowing de Pitch & Estratégia",
+            technique: "Shadowing + Pausas Dramáticas",
+            resource: "Canal ColdFusion (Trecho de 2 min sobre decisão estratégica de uma empresa tech)",
+            description: "Pratique shadowing com a narração calma e envolvente do ColdFusion. Foque em como ele usa pausas para dar ênfase às decisões e consequências.",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisar flashcards pendentes no Anki." },
+              { time: "05 - 22 min", task: "Shadowing frase por frase do trecho de 2 minutos." },
+              { time: "22 - 30 min", task: "Falar o trecho junto com o narrador simultaneamente (Chorusing)." }
+            ],
+            microhabit: "Ouça 10-15 minutos de um podcast sobre tendências de tecnologia ou games no tempo morto."
+          },
+          {
+            id: "w4d3",
+            dayName: "Quarta",
+            focus: "E-mail de Follow-up & Action Items",
+            technique: "Professional Writing + AI Polish",
+            resource: "Cenário de Reunião de Planejamento + ChatGPT/Claude",
+            description: "Escreva um e-mail curto (6-8 linhas) resumindo uma reunião de planejamento fictícia ou real: o que foi decidido, quem é o responsável por cada parte e os prazos (usando 'by EOD', 'going to', 'if... will'). Peça à IA para revisar o tom executivo.",
+            timeline: [
+              { time: "00 - 15 min", task: "Escrever o e-mail de follow-up sem ajuda de tradutor." },
+              { time: "15 - 23 min", task: "Analisar as melhorias sugeridas pela IA." },
+              { time: "23 - 30 min", task: "Ler o e-mail finalizado em voz alta 4 vezes." }
+            ],
+            microhabit: "Mude o idioma de um jogo que você joga frequentemente ou de um software que você usa para inglês."
+          },
+          {
+            id: "w4d4",
+            dayName: "Quinta",
+            focus: "Roleplay: Sprint Planning & Prazos",
+            technique: "Negotiation & Estimation Roleplay",
+            resource: "Simulação de Reunião em Voz Alta",
+            description: "Simule que o Product Manager pediu uma funcionalidade grande para sexta-feira, mas você sabe que é arriscado. Pratique negociar o prazo em voz alta usando First Conditional e expressões da semana ('If we rush this, we might introduce bugs', 'Let's aim for next Tuesday').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisar as frases de Fechamento & Decisão desta semana." },
+              { time: "05 - 22 min", task: "Simular a negociação de prazo em voz alta por 3 vezes." },
+              { time: "22 - 30 min", task: "Gravar seu argumento final de 90 segundos." }
+            ],
+            microhabit: "Ao olhar sua agenda do dia, leia seus compromissos em voz alta usando Present Continuous ('At 2 PM, I'm meeting with...')."
+          },
+          {
+            id: "w4d5",
+            dayName: "Sexta",
+            focus: "Interação com Conteúdo (Trailers & Previsões)",
+            technique: "Active Prediction & Commentary",
+            resource: "Trailer de um jogo futuro ou filme aguardado (YouTube)",
+            description: "Assista a um trailer ou vídeo sobre próximos lançamentos. Pause e faça previsões e comentários em voz alta ('This is going to be huge', 'If the story is good, it'll be Game of the Year').",
+            timeline: [
+              { time: "00 - 05 min", task: "Revisão rápida do Anki." },
+              { time: "05 - 25 min", task: "Assistir e comentar em voz alta sobre o que você espera do lançamento." },
+              { time: "25 - 30 min", task: "Anotar 3 expressões novas." }
+            ],
+            microhabit: "Converse com uma IA por voz (ChatGPT Voice) por 5 minutos sobre seus planos para o fim de semana."
+          },
+          {
+            id: "w4d6",
+            dayName: "Sábado",
+            focus: "Revisão Geral do Mês 1 & Balanço",
+            technique: "Monthly Review + Fluency Check",
+            resource: "Anki + Gravador de Voz",
+            description: "Parabéns por chegar ao fim do Mês 1! Zere seu Anki e grave um áudio de 5 minutos falando sobre suas metas profissionais e pessoais para os próximos 3 meses em inglês.",
+            timeline: [
+              { time: "00 - 15 min", task: "Revisão geral de flashcards no Anki." },
+              { time: "15 - 25 min", task: "Gravar o áudio de 5 minutos sobre seus planos futuros." },
+              { time: "25 - 30 min", task: "Comparar este áudio com o da Semana 1 para notar sua evolução!" }
+            ],
+            microhabit: "Celebre assistindo a um filme ou episódio de série em inglês com legenda em inglês."
+          },
+          {
+            id: "w4d7",
+            dayName: "Domingo",
+            focus: "Recarga do Barril para o Mês 2",
+            technique: "Curation & Expansion",
+            resource: "YouTube + Spotify/Podcasts",
+            description: "Organize seu Barril de Conteúdos para iniciar o Mês 2 (onde entraremos em Storytelling, entrevistas técnicas, arquitetura avançada e debates mais profundos).",
+            timeline: [
+              { time: "00 - 15 min", task: "Limpar vídeos já assistidos da playlist e adicionar 4 novos." },
+              { time: "15 - 30 min", task: "Exportar um backup do seu progresso aqui no painel." }
+            ],
+            microhabit: "Peça a Parte 2 (Mês 2: Semanas 5 a 8) no chat quando estiver pronto para avançar!"
+          }
+        ]
+      }
+    ];
+
+    // =====================================================================
+    // GERENCIAMENTO DE ESTADO (LOCALSTORAGE)
+    // =====================================================================
+    let completedDays = {};
+    let currentModalDayId = null;
+
+    function loadProgress() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          completedDays = JSON.parse(saved);
+        }
+      } catch (e) {
+        console.error("Erro ao carregar progresso:", e);
+        completedDays = {};
+      }
+    }
+
+    function saveProgress() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(completedDays));
+      } catch (e) {
+        console.error("Erro ao salvar progresso:", e);
+      }
+      updateHeaderStats();
+    }
+
+    function toggleDayCompletion(dayId, event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      completedDays[dayId] = !completedDays[dayId];
+      if (!completedDays[dayId]) {
+        delete completedDays[dayId];
+      }
+      saveProgress();
+      renderMonth1();
+      if (currentModalDayId === dayId) {
+        updateModalButtonState(dayId);
+      }
+    }
+
+    // =====================================================================
+    // ATUALIZAÇÃO DE ESTATÍSTICAS NO HEADER
+    // =====================================================================
+    function updateHeaderStats() {
+      let totalDays = 0;
+      let doneCount = 0;
+      let totalVocab = 0;
+      let unlockedVocab = 0;
+
+      roadmapData.forEach(week => {
+        const weekVocabCount = week.vocabCategories.reduce((acc, cat) => acc + cat.items.length, 0);
+        totalVocab += weekVocabCount;
+
+        let weekDoneDays = 0;
+        week.days.forEach(day => {
+          totalDays++;
+          if (completedDays[day.id]) {
+            doneCount++;
+            weekDoneDays++;
+          }
+        });
+
+        // Vocabulário acumulado proporcional aos dias concluídos na semana
+        unlockedVocab += Math.round((weekDoneDays / week.days.length) * weekVocabCount);
+      });
+
+      const percent = totalDays > 0 ? Math.round((doneCount / totalDays) * 100) : 0;
+
+      document.getElementById('progress-text').textContent = `${doneCount} de ${totalDays} dias concluídos`;
+      document.getElementById('progress-percent').textContent = `${percent}%`;
+      document.getElementById('progress-bar').style.width = `${percent}%`;
+      document.getElementById('vocab-counter').textContent = `${unlockedVocab} / ${totalVocab} termos`;
+    }
+
+    // =====================================================================
+    // RENDERIZAÇÃO DAS SEMANAS (MÊS 1)
+    // =====================================================================
+    function renderMonth1() {
+      const container = document.getElementById('month-1-container');
+      container.innerHTML = '';
+
+      roadmapData.forEach((week, index) => {
+        const completedInWeek = week.days.filter(d => completedDays[d.id]).length;
+        const weekPercent = Math.round((completedInWeek / week.days.length) * 100);
+        const totalWeekVocab = week.vocabCategories.reduce((sum, c) => sum + c.items.length, 0);
+        const isFirstWeek = index === 0;
+
+        const weekCard = document.createElement('section');
+        weekCard.className = "bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl transition-all";
+        
+        weekCard.innerHTML = `
+          <!-- Cabeçalho da Semana (Clicável para expandir/recolher) -->
+          <div onclick="toggleWeekAccordion(${week.weekNumber})" class="cursor-pointer p-5 sm:p-6 bg-gradient-to-r from-slate-900 to-slate-850 hover:from-slate-850 hover:to-slate-800/80 transition-colors flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800/80">
+            <div class="space-y-1.5">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-blue-500/15 text-blue-400 border border-blue-500/30">
+                  Semana ${week.weekNumber}
+                </span>
+                <span class="text-xs font-medium text-slate-400">
+                  ${totalWeekVocab} vocábulos • 7 dias ativos
+                </span>
+                ${weekPercent === 100 ? `<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">✓ Semana Concluída</span>` : ''}
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">${week.theme}</h3>
+              <p class="text-xs sm:text-sm text-slate-400">${week.subtitle}</p>
+            </div>
+
+            <div class="flex items-center justify-between lg:justify-end gap-4 shrink-0">
+              <div class="text-right">
+                <div class="text-xs text-slate-400 font-medium">${completedInWeek}/7 dias</div>
+                <div class="w-28 h-2 bg-slate-800 rounded-full overflow-hidden mt-1">
+                  <div class="h-full bg-emerald-400 rounded-full transition-all duration-300" style="width: ${weekPercent}%"></div>
+                </div>
+              </div>
+              <div id="chevron-week-${week.weekNumber}" class="p-2 rounded-lg bg-slate-800/80 text-slate-300 transition-transform duration-200 ${isFirstWeek ? 'rotate-180' : ''}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corpo Expansível da Semana -->
+          <div id="body-week-${week.weekNumber}" class="${isFirstWeek ? '' : 'hidden'} p-5 sm:p-6 space-y-6">
+            
+            <!-- Grade dos 7 Dias (Checklist + Clique para Detalhes) -->
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  Cronograma Diário (Clique no dia para abrir o roteiro de 30 min)
+                </h4>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3">
+                ${week.days.map(day => {
+                  const isDone = !!completedDays[day.id];
+                  return `
+                    <div onclick="openDayModal(${week.weekNumber}, '${day.id}')" 
+                         class="group cursor-pointer rounded-xl p-3.5 border transition-all flex flex-col justify-between min-h-[135px] ${
+                           isDone 
+                             ? 'bg-emerald-950/25 border-emerald-500/40 hover:border-emerald-400' 
+                             : 'bg-slate-950/60 border-slate-800 hover:border-blue-500/50 hover:bg-slate-900'
+                         }">
+                      <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                          <span class="text-xs font-bold uppercase tracking-wider ${isDone ? 'text-emerald-400' : 'text-slate-400 group-hover:text-blue-400'}">
+                            ${day.dayName}
+                          </span>
+                          <!-- Checkbox Interativo -->
+                          <label onclick="event.stopPropagation()" class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleDayCompletion('${day.id}', event)" class="sr-only peer">
+                            <div class="w-5 h-5 rounded-md border ${isDone ? 'bg-emerald-500 border-emerald-500' : 'bg-slate-900 border-slate-600 group-hover:border-slate-400'} flex items-center justify-center transition-colors">
+                              ${isDone ? `<svg class="w-3.5 h-3.5 text-slate-950 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>` : ''}
+                            </div>
+                          </label>
+                        </div>
+                        <div class="text-xs font-semibold leading-snug ${isDone ? 'text-slate-300 line-through decoration-emerald-500/50' : 'text-white'}">
+                          ${day.focus}
+                        </div>
+                      </div>
+
+                      <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
+                        <span class="text-slate-400 font-medium">30 min</span>
+                        <span class="text-blue-400 font-semibold group-hover:translate-x-0.5 transition-transform">Abrir →</span>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Bloco: Gramática Contextualizada + Recursos do Barril -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+              
+              <!-- Gramática -->
+              <div class="lg:col-span-7 bg-slate-950/70 border border-slate-800 rounded-xl p-4 sm:p-5">
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  Gramática Aplicada (Sem Decoreba)
+                </div>
+                <h5 class="text-sm sm:text-base font-bold text-white mb-2">${week.grammar.title}</h5>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">${week.grammar.explanation}</p>
+                <div class="space-y-1.5 bg-slate-900/90 border border-slate-800/80 rounded-lg p-3">
+                  ${week.grammar.examples.map(ex => `<div class="text-xs text-slate-300 font-mono">${ex}</div>`).join('')}
+                </div>
+              </div>
+
+              <!-- Recursos do Barril -->
+              <div class="lg:col-span-5 bg-slate-950/70 border border-slate-800 rounded-xl p-4 sm:p-5">
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  Barril de Conteúdos Recomendado
+                </div>
+                <div class="space-y-3">
+                  ${week.resources.map(res => `
+                    <div class="bg-slate-900/90 border border-slate-800/80 rounded-lg p-3">
+                      <div class="flex items-center justify-between gap-2">
+                        <span class="text-xs font-bold text-white">${res.name}</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">${res.type}</span>
+                      </div>
+                      <p class="text-xs text-slate-400 mt-1 leading-relaxed">${res.desc}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Banco de Vocabulário (Acordeão Interno para manter UI limpa) -->
+            <div class="bg-slate-950/70 border border-slate-800 rounded-xl overflow-hidden">
+              <button onclick="toggleVocabDrawer(${week.weekNumber})" class="w-full px-4 sm:px-5 py-3.5 flex items-center justify-between text-left hover:bg-slate-900/60 transition-colors">
+                <div class="flex items-center gap-2.5">
+                  <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                    ${totalWeekVocab} Termos
+                  </span>
+                  <span class="text-sm font-bold text-white">Banco de Vocabulário & Expressões Reais da Semana ${week.weekNumber}</span>
+                </div>
+                <span id="vocab-btn-text-${week.weekNumber}" class="text-xs font-semibold text-blue-400">Mostrar Lista ↓</span>
+              </button>
+
+              <div id="vocab-drawer-${week.weekNumber}" class="hidden p-4 sm:p-5 border-t border-slate-800 space-y-5">
+                <p class="text-xs text-slate-400">
+                  Dica Natural Method: Não tente decorar a lista inteira de uma vez. Use-a como referência durante o seu Sentence Mining e passe o mouse/clique nos termos para ver o significado em contexto.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${week.vocabCategories.map(cat => `
+                    <div class="bg-slate-900/80 border border-slate-800/90 rounded-xl p-4">
+                      <h6 class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-3 border-b border-slate-800 pb-2">
+                        ${cat.category}
+                      </h6>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        ${cat.items.map(item => `
+                          <div class="text-xs p-2 rounded-lg bg-slate-950/60 border border-slate-800/60 hover:border-slate-700 transition-colors">
+                            <div class="font-semibold text-slate-200">${item.en}</div>
+                            <div class="text-slate-400 text-[11px] mt-0.5">${item.pt}</div>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+
+        container.appendChild(weekCard);
+      });
+    }
+
+    // =====================================================================
+    // INTERAÇÕES DE UI (ACORDEÕES, ABAS DE MESES E MODAIS)
+    // =====================================================================
+    function toggleWeekAccordion(weekNum) {
+      const body = document.getElementById(`body-week-${weekNum}`);
+      const chevron = document.getElementById(`chevron-week-${weekNum}`);
+      body.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    }
+
+    function expandAllWeeks(expand) {
+      roadmapData.forEach(week => {
+        const body = document.getElementById(`body-week-${week.weekNumber}`);
+        const chevron = document.getElementById(`chevron-week-${week.weekNumber}`);
+        if (expand) {
+          body.classList.remove('hidden');
+          chevron.classList.add('rotate-180');
+        } else {
+          body.classList.add('hidden');
+          chevron.classList.remove('rotate-180');
+        }
+      });
+    }
+
+    function toggleVocabDrawer(weekNum) {
+      const drawer = document.getElementById(`vocab-drawer-${weekNum}`);
+      const btnText = document.getElementById(`vocab-btn-text-${weekNum}`);
+      const isHidden = drawer.classList.contains('hidden');
+      drawer.classList.toggle('hidden');
+      btnText.textContent = isHidden ? 'Ocultar Lista ↑' : 'Mostrar Lista ↓';
+    }
+
+    function switchMonth(monthNum) {
+      const m1Container = document.getElementById('month-1-container');
+      const placeholder = document.getElementById('month-placeholder-container');
+      
+      // Atualiza estilo das abas
+      [1, 2, 3].forEach(num => {
+        const tab = document.getElementById(`tab-month-${num}`);
+        if (num === monthNum) {
+          tab.className = "px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-md shadow-blue-900/30 transition-all flex items-center gap-2";
+        } else {
+          tab.className = "px-4 py-2.5 rounded-xl text-sm font-medium bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 transition-all flex items-center gap-2";
+        }
+      });
+
+      if (monthNum === 1) {
+        m1Container.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+      } else {
+        m1Container.classList.add('hidden');
+        placeholder.classList.remove('hidden');
+        document.getElementById('placeholder-title').textContent = 
+          monthNum === 2 
+            ? "Mês 2 (Semanas 5 a 8): Argumentação, Storytelling & Entrevistas Tech" 
+            : "Mês 3 (Semanas 9 a 12): Fluência Executiva, Negociação & Debates Avançados";
+      }
+    }
+
+    // =====================================================================
+    // MODAL DE DETALHES DO DIA
+    // =====================================================================
+    function openDayModal(weekNumber, dayId) {
+      const week = roadmapData.find(w => w.weekNumber === weekNumber);
+      if (!week) return;
+      const day = week.days.find(d => d.id === dayId);
+      if (!day) return;
+
+      currentModalDayId = dayId;
+
+      document.getElementById('modal-week-badge').textContent = `Semana ${week.weekNumber} • ${day.dayName}-feira`;
+      document.getElementById('modal-day-title').textContent = day.focus;
+      document.getElementById('modal-technique').textContent = day.technique;
+      document.getElementById('modal-resource').textContent = day.resource;
+      document.getElementById('modal-description').textContent = day.description;
+      document.getElementById('modal-microhabit').textContent = day.microhabit;
+
+      // Renderiza Timeline de 30 Minutos
+      const timelineContainer = document.getElementById('modal-timeline');
+      timelineContainer.innerHTML = day.timeline.map(step => `
+        <div class="flex items-start gap-3 bg-slate-950/70 border border-slate-800 rounded-xl p-3">
+          <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/25 shrink-0">
+            ${step.time}
+          </span>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed pt-0.5">${step.task}</p>
+        </div>
+      `).join('');
+
+      updateModalButtonState(dayId);
+
+      const modal = document.getElementById('day-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function updateModalButtonState(dayId) {
+      const btn = document.getElementById('modal-toggle-btn');
+      const isDone = !!completedDays[dayId];
+      if (isDone) {
+        btn.className = "px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 transition-all flex items-center gap-2";
+        btn.innerHTML = `<span>✓ Dia Concluído (Desmarcar)</span>`;
+      } else {
+        btn.className = "px-5 py-2.5 rounded-xl text-sm font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all flex items-center gap-2 shadow-lg shadow-emerald-900/30";
+        btn.innerHTML = `<span>Marcar Dia como Concluído</span>`;
+      }
+    }
+
+    function toggleDayFromModal() {
+      if (currentModalDayId) {
+        toggleDayCompletion(currentModalDayId);
+      }
+    }
+
+    function closeDayModal() {
+      const modal = document.getElementById('day-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      currentModalDayId = null;
+    }
+
+    // =====================================================================
+    // MODAL DE BACKUP / RESET
+    // =====================================================================
+    function openResetModal() {
+      document.getElementById('backup-feedback').classList.add('hidden');
+      const modal = document.getElementById('reset-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeResetModal() {
+      const modal = document.getElementById('reset-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function exportProgress() {
+      const dataStr = JSON.stringify(completedDays);
+      const tempInput = document.createElement('textarea');
+      tempInput.value = dataStr;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      const feedback = document.getElementById('backup-feedback');
+      feedback.textContent = "Backup copiado para a área de transferência!";
+      feedback.classList.remove('hidden');
+    }
+
+    function confirmReset() {
+      completedDays = {};
+      saveProgress();
+      renderMonth1();
+      const feedback = document.getElementById('backup-feedback');
+      feedback.textContent = "Progresso zerado com sucesso.";
+      feedback.classList.remove('hidden');
+    }
+
+    // Fechar modais ao clicar fora ou pressionar ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDayModal();
+        closeResetModal();
+      }
+    });
+
+    document.getElementById('day-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'day-modal') closeDayModal();
+    });
+
+    document.getElementById('reset-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'reset-modal') closeResetModal();
+    });
+
+    // =====================================================================
+    // INICIALIZAÇÃO
+    // =====================================================================
+    window.onload = function () {
+      loadProgress();
+      renderMonth1();
+      updateHeaderStats();
+    };
+  </script>
+</body>
+</html>
